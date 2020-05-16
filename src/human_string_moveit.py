@@ -12,7 +12,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 plane = p.loadURDF("plane.urdf")
 
 
-human = p.loadURDF("human_moveit_config/urdf/human.urdf", [0, 0, 1], useFixedBase=1)
+human = p.loadURDF("human.urdf", [0, 0, 1], useFixedBase=1)
 
 
 # position, orientation = p.getBasePositionAndOrientation(human)

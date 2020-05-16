@@ -20,7 +20,7 @@ python3 human_moveit.py
 - For MJCF version:
 ```bash
 python3 human_mjcf.py
-
+```
 
 ## Human with string attached to hand:
 

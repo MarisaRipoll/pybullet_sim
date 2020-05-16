@@ -12,7 +12,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 plane = p.loadURDF("plane.urdf")
 
 
-human = p.loadURDF("humoro/humoro/data/human.urdf", [0, 0, 0])
+human = p.loadURDF("human_humoro.urdf", [0, 0, 0])
 
 
 position, orientation = p.getBasePositionAndOrientation(human)
