@@ -1,42 +1,5 @@
 # Pybullet_sim
 
-## Running the scripts:
-
-cd into the directory with the python files and source your terminal.
-
-```bash
-cd pybullet_sim/src
-source /path/to/ros/eloquent/local_setup.bash
-```
-
-## Human figure:
-
-- For URDF version:
-
-```bash
-python3 human_moveit.py
-```
-
-- For MJCF version:
-```bash
-python3 human_mjcf.py
-```
-
-## Human with string attached to hand:
-
-- For URDF version:
-
-```bash
-python3 human_string_moveit.py
-```
-
-- For MJCF version:
-```bash
-python3 human_string_mjcf.py
-```
-
-To see the implementation error of the setJointMotorControlArray uncomment the line before the last loop in human_string_moveit.py
-
 
 ## Trying to pull the string:
 
@@ -45,7 +8,11 @@ To see the implementation error of the setJointMotorControlArray uncomment the l
 python3 human_pull_string_moveit.py
 ```
 
-- For MJCF version:
-```bash
-python3 human_pull_string_mjcf.py
-```
+## Problems:
+
+1. How do I fix the debugline's starting point in the link frame origin and the debugline's ending point in the world frame?
+2. To see the implementation of the setJointMotorControlArray uncomment the line before the last loop. (The non-fixed part of the figure moves uncontrollably, even when only the left arm link indices are specified).
+3. The same reaction is obtained when I create a costraint.
+4. The biggest problem is that applyExternalForce doesnt make the figure move.
+
+
