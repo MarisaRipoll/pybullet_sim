@@ -18,24 +18,26 @@ human = p.loadURDF("human.urdf", [0, 0, 1], useFixedBase=1)
 # position, orientation = p.getBasePositionAndOrientation(human)
 # orientation
 
+
+# NUMBER OF JOINTS = 43 (However most of them are visualized at the base... strange)
 joints = p.getNumJoints(human)
 print("The number of Joints is: ", joints)
 
-""""""
 for i in range(joints):
 	info = p.getJointInfo(human, i)
 	print(info)
 info = p.getJointInfo(human, 25)
 print(info)
 
+# NUMBER OF CONSTRAINTS = 0 (Unless I uncomments createConstraint function)
 cons = p.getNumConstraints()
 print("The number of Constraints is: ", cons)
-
 
 for i in range(cons):
 	info = p.getConstraintInfo(i)
 	print(info)
 
+# GET LINK STATES, JOINT STATES
 linkstate = p.getLinkState(human, 25)
 print("The link state or link 25 is: ", linkstate)
 print("\n")
@@ -43,8 +45,9 @@ print("\n")
 jointinfo = p.getJointInfo(human, 25)
 print("The joint info or link 25 is: ", jointinfo)
 
+# NUMBER OF BODIES = 2 (0 = plane, 1 = human)
 bodies = p.getNumBodies()
-print("The number of bodies is: ", bodies)	    # So far there are 2 bodies: 0 = plane, 1 = human
+print("The number of bodies is: ", bodies)
 """for i in range(bodies):
 	info = p.getBodyInfo(i)
 	body_id = p.getBodyUniqueId(i)
@@ -52,19 +55,36 @@ print("The number of bodies is: ", bodies)	    # So far there are 2 bodies: 0 = 
 	print("This body's Id is: ", body_id)"""
 
 
+# COMMON SETUP
 p.setGravity(0, 0, -9.81)
 p.setTimeStep(-0.0001)
 p.setRealTimeSimulation(1)
 color = [1, 0, 0]
 
-"""Joint indexes:
-0: Waist
-1: Between Feet (in floor)
-4: Upper Chest
-7: Neck
-8: Head
-21: 
-25: left_wrist_2 (out of 3) """
+
+
+
+# IMPORTANT JOINT INDICES:
+
+"""
+00: Waist
+01: Base - between the feet (on the floor)
+04: Upper Chest
+07: Neck
+08: Head
+12: Right Shoulder
+13: Right Elbow
+16: Right Wrist
+21: Left Shoulder
+22: Left Elbow
+25: Left Wrist
+30: Right Leg (Point where it joins the waist)
+31: Right Knee
+33: Right Foot
+38: Left Leh (Point where it joins the waist)
+39: Left Knee
+41: Left Foot
+"""
 
 
 
